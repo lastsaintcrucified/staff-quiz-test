@@ -2,8 +2,10 @@ import Link from "next/link";
 import { useState, useContext } from "react";
 import { AppContext } from "./AppContext";
 import Styles from "../styles/register.module.css";
+import { useRouter } from "next/router";
 
 const Register = () => {
+  const router = useRouter();
   const [data, setData] = useState({
     name: "",
     email: "",
@@ -33,10 +35,14 @@ const Register = () => {
     })
       .then((response) => response.json())
       .then((raw) => {
-        context.setToken(raw.data.token);
+        if (raw.data) {
+          context.setToken(raw.data.token);
+          router.push("/login");
+        }
+        console.log(raw);
       });
   };
-  console.log(context.token);
+  //   console.log("token-->",context.token);
   return (
     <>
       <div className={Styles.main}>

@@ -1,20 +1,22 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Styles from "../styles/question.module.css";
 
-const Question = ({ q }) => {
-  const [answer, setAnswer] = useState({});
+const Question = ({ q, answer, setAnswer }) => {
   const [selectedOption, setSelectedOption] = useState("");
   const handleChange = (e) => {
     setSelectedOption(e.currentTarget.value);
+    // console.log("sele", selectedOption);
+    // console.log("val", e.currentTarget.value);
     setAnswer({
       ...answer,
       [e.currentTarget.name]: e.currentTarget.value,
     });
   };
-  console.log("answer->", answer);
   return (
     <div key={q.id} className={Styles.main}>
-      <h1>{q.title}</h1>
+      <h1>
+        {q.id}. {q.title}
+      </h1>
       <div className={Styles.inpt}>
         <input
           type="radio"
@@ -22,7 +24,7 @@ const Question = ({ q }) => {
           name={q.id}
           value={q.question_options[0].id}
           onChange={handleChange}
-          checked={selectedOption === q.question_options[0].id}
+          checked={selectedOption === `${q.question_options[0].id}`}
         />
         <label htmlFor={q.question_options[0].id}>
           {q.question_options[0].answer}
@@ -33,7 +35,7 @@ const Question = ({ q }) => {
           name={q.id}
           value={q.question_options[1].id}
           onChange={handleChange}
-          checked={selectedOption === q.question_options[1].id}
+          checked={selectedOption === `${q.question_options[1].id}`}
         />
         <label htmlFor={q.question_options[1].id}>
           {q.question_options[1].answer}
@@ -44,7 +46,7 @@ const Question = ({ q }) => {
           name={q.id}
           value={q.question_options[2].id}
           onChange={handleChange}
-          checked={selectedOption === q.question_options[2].id}
+          checked={selectedOption === `${q.question_options[2].id}`}
         />
         <label htmlFor={q.question_options[2].id}>
           {q.question_options[2].answer}
@@ -55,7 +57,7 @@ const Question = ({ q }) => {
           name={q.id}
           value={q.question_options[3].id}
           onChange={handleChange}
-          checked={selectedOption === q.question_options[3].id}
+          checked={selectedOption === `${q.question_options[3].id}`}
         />
         <label htmlFor={q.question_options[3].id}>
           {q.question_options[3].answer}

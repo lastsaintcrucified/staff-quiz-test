@@ -3,7 +3,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 20px;
 }
 .btn {
   margin-top: 30px;
@@ -18,10 +17,4 @@
   cursor: pointer;
   background-color: black;
   color: white;
-}
-.main a {
-  color: brown;
-  font-family: fantasy;
-  border: 5px solid brown;
-  padding: 10px;
 }
