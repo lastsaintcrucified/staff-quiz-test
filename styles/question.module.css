@@ -1,0 +1,14 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.main h1 {
+  margin-top: 50px;
+}
+.inpt {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
