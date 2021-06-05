@@ -8,7 +8,7 @@ const FullResult = () => {
   const contextApp = useContext(AppContext);
   const router = useRouter();
   const [result, setResult] = useState({});
-  console.log(contextApp);
+  // console.log(contextApp);
   //Fetch results
   useEffect(async () => {
     const res = await fetch(
@@ -27,7 +27,7 @@ const FullResult = () => {
       router.push("/login");
     }
     setResult({ ...raw });
-    console.log("result", result);
+    // console.log("result", result);
   }, []);
   const handleClick = () => {
     router.push("/login");

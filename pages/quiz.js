@@ -41,7 +41,7 @@ const Quiz = () => {
     if (quizes.data) {
       setQuestions(quizes.data.question_tag.questions);
     }
-    console.log("quizes-->", quizes);
+    // console.log("quizes-->", quizes);
   }, []);
 
   const timeCount = () => {
@@ -77,6 +77,7 @@ const Quiz = () => {
   console.log("answer->", answer);
   return (
     <div className={Styles.main}>
+      <h1>It's Quiz Time!</h1>
       {quizData.data
         ? questions.map((q) => {
             return (

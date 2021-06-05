@@ -20,7 +20,7 @@ const Register = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(data);
+    // console.log(data);
     if (data.password !== data.password_confirmation) {
       return alert("password must match!");
     }
@@ -39,7 +39,7 @@ const Register = () => {
           context.setToken(raw.data.token);
           router.push("/login");
         }
-        console.log(raw);
+        // console.log(raw);
       });
   };
   //   console.log("token-->",context.token);
