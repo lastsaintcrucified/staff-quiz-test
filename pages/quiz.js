@@ -92,7 +92,12 @@ const Quiz = () => {
       <button onClick={handleClick} className={Styles.btn}>
         Submit
       </button>
-      {result.data ? <Result result={result} /> : null}
+      {result.data ? (
+        <>
+          <h1>Look Below!!</h1>
+          <Result result={result} />
+        </>
+      ) : null}
       {result.data ? <FullResult /> : null}
     </div>
   );
